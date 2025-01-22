@@ -1,0 +1,140 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #1e3c72, #2a5298);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+/* Header */
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-box span {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fffa65;
+}
+
+.info-box p {
+    font-size: 1rem;
+    color: #ffffff;
+}
+
+/* Grid */
+#grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin: 0 auto;
+}
+
+.card-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: transform 0.5s ease;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+
+.card .front {
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #007acc;
+}
+
+.card .front img {
+    width: 60%;
+    height: 60%;
+}
+
+.card .back {
+    background: #007acc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(180deg);
+}
+
+.card .back img {
+    width: 60%;
+    height: 60%;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+}
+
+#restart {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: #ff4757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#restart:hover {
+    background: #e84118;
+    transform: scale(1.1);
+}
